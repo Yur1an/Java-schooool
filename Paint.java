@@ -2,16 +2,16 @@ import java.util.Scanner;
 public class Paint {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Jaki kształt chcesz narysować? (linia, trojkat, prostokat)");
+        System.out.println("What shape do you want to draw? (line, triangle, rectangle): ");
         String shape = input.nextLine();
         switch (shape){
-            case "linia":
+            case "line":
                 System.out.println(line());
                 break;
-            case "trojkat":
+            case "triangle":
                 System.out.println(triangle());
                 break;
-            case "prostokat":
+            case "rectangle":
                 System.out.println(rectangle());
                 break;
         }
@@ -20,7 +20,7 @@ public class Paint {
     public static String line() {
         Scanner input = new Scanner(System.in);
         int i = 0;
-        System.out.println("Podaj długość: ");
+        System.out.println("Type in lenght: ");
         int n = input.nextInt();
         while (i < n) {
             System.out.print("o");
@@ -30,7 +30,7 @@ public class Paint {
 
     public static String triangle() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Podaj wysokość: ");
+        System.out.println("Type in height: ");
         int h = input.nextInt();
         int k = 1;
         int l = 0;
@@ -52,9 +52,9 @@ public class Paint {
     }
     public static String rectangle(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Podaj a: ");
+        System.out.println("Type in side a: ");
         int a = input.nextInt();
-        System.out.println("Podaj b: ");
+        System.out.println("Type in side b: ");
         int b = input.nextInt();
 
         for (int m = a; m > 0; m--) {
