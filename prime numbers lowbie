@@ -1,0 +1,64 @@
+import java.util.Scanner;
+public class primesLowbie {
+    public static void main(String[] args){
+        Scanner ask = new Scanner(System.in);
+        System.out.println("Od jakiej liczby ma się zaczynać ciąg?: ");
+        int a = ask.nextInt();
+        System.out.println("A na jakiej kończyć?: ");
+        int b = ask.nextInt();
+        int[] tab = new int[b];
+        int[] tab2 = new int[b];
+        zad_1(a,b);
+        zad1(a, b, tab, tab2);
+
+    }
+
+    static void zad_1(int a, int b){
+        for(int i = a; i <= b; i++){
+            if (isPrime(i)){
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    static boolean isPrime(int x){
+        boolean prime = true;
+        int score;
+
+        for(int i = 2; i < x; i++){
+            score = x % i;
+
+            if (score == 0){
+                i = x + 1;
+                prime = false;
+            }
+        }
+
+        if (prime){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    static void zad1(int start, int end, int pierwsze[], int zlozone[]){
+
+        while(start <= end){
+            for(int i = 2; i < end / 2; i++){
+                int indexZlozonych = 0;
+                int indexPierwszych = 0;
+                int czyPierwsza= 0;
+                if(start % i == 0){
+                    zlozone[indexZlozonych] = start;
+                    indexZlozonych++;
+                } else {
+                    czyPierwsza++;
+                }
+                if(czyPierwsza == end-3){
+                    pierwsze[indexPierwszych] = start;
+                    indexPierwszych++;
+                }
+            }
+            start++;
+        }
+    }
+}
